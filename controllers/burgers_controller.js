@@ -23,10 +23,17 @@ router.post("/api/burgers", function(req, res) {
   });
 
   //Eat a buger
-  router.post("api/burgers/:id", function(res, req) {
+  router.put("api/burgers/:id", function(res, req) {
       burgers.updateOne(req.params.id, function() {
           res.render("/index");
       })
   })
+//API ROUTE
+router.get("/api", function(req, res) {
+    burgers.selectAll(function(data) {
+        res.json(data);
+    })
+})
+
 //Export Routes
 module.exports = router;
