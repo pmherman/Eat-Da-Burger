@@ -1,15 +1,20 @@
-<h1 class="text-center">Eat the Burger!</h1>
+{{!-- Main Header --}}
+<div id="header" class="text-center">
+    <h1>Eat the Burger!</h1>
+    <img class="burger-image" src="assets/img/burger.gif" alt="burger gif">
+</div>
 <div class="container">
     <div class="row">
+        {{!-- Left Side - Uneaten Burgers --}}
         <div class="col-sm-6">
             <h4 class="text-center">Burgers to Eat:</h4>
             {{#each burgers}}
                 {{#unless devoured}}
-                    <form action="api/burger/{{id}}" method="POST">
+                    <form action="burgers/update/{{id}}" method="POST">
                         <div class="input-group">
                         <li class="form-control">{{id}}. {{burger_name}}</li>
                             <span class="input-group-btn">
-                            <button class="btn btn-danger devour-button" type="submit">Eat The Burger!</button>
+                                <button class="btn btn-danger devour-button" type="submit">Eat The Burger!</button>
                             </span>
                         </div>
                     </form>
@@ -18,4 +23,3 @@
         </div>
     </div>
 </div>
-

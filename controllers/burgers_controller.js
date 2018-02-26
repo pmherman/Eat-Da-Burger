@@ -15,7 +15,7 @@ router.get("/", function(req, res) {
     })
 })
 //Create a new burger
-router.post("/api/burgers", function(req, res) {
+router.post("/burgers/create", function(req, res) {
     cat.insertOne(["name"],[req.body.burger_name], function(result) {
       // Send back the ID of the new quote
       res.render("/index");
@@ -23,7 +23,7 @@ router.post("/api/burgers", function(req, res) {
   });
 
   //Eat a buger
-  router.put("api/burgers/:id", function(res, req) {
+  router.post("/burgers/update/:id", function(res, req) {
       burgers.updateOne(req.params.id, function() {
           res.render("/index");
       })
