@@ -2,6 +2,7 @@
 var express = require("express");
 var router = express.Router();
 var burgers = require("../models/burgers.js");
+var methodOverride = require('method-override');
 
 //Routes
 
@@ -15,17 +16,18 @@ router.get("/", function(req, res) {
     })
 })
 //Create a new burger
-router.post("/burgers/create", function(req, res) {
-    cat.insertOne(["name"],[req.body.burger_name], function(result) {
+router.post("/api/burgers", function(req, res) {
+    burgers.insertOne(["burger_name", "devoured"],[req.body.burger_name, false], function(result) {
       // Send back the ID of the new quote
-      res.render("/index");
+      res.redirect("/");
+    console.log("POST");
     });
   });
-
-  //Eat a buger
-  router.post("/burgers/update/:id", function(res, req) {
-      burgers.updateOne(req.params.id, function() {
-          res.render("/index");
+//Eat a buger
+  router.put("/api/update/:id", function(req, res) {
+    var condition = "id = " + req.params.id  
+    burgers.updateOne({ devoured: true }, condition, function(result) {
+          res.redirect("/");
       })
   })
 //API ROUTE
