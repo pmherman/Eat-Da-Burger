@@ -13,7 +13,7 @@
                     <form action="/api/update/{{this.id}}?_method=PUT" method="POST">
                         <div class="input-group">
                             <input type="hidden" name="devoured" value="true">
-                                <li class="form-control uneaten">{{this.id}}. {{this.burger_name}}</li>
+                                <li class="form-control uneaten">{{this.burger_name}}</li>
                             <span class="input-group-btn">
                                 <button class="btn btn-danger" data-id="{{id}}" data-eat="{{devoured}}"type="submit">Eat The Burger!</button>
                             </span>
@@ -27,7 +27,7 @@
             {{#each burgers}}
                 {{#if this.devoured}}
                         <div>
-                            <li class="form-control devoured">{{this.id}}. {{this.burger_name}}</li>
+                            <li class="form-control devoured">{{this.burger_name}}</li>
                         </div>
                     </form>
                 {{/if}}
