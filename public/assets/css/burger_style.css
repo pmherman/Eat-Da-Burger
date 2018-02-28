@@ -2,21 +2,52 @@
 body {
     background-color: gold;
 }
+#title {
+    color: black;
+    font-size: 8em;
+    margin-bottom: .2em;
+    font-family: 'Knewave', cursive;
+}
 .burger-image {
     margin: auto;
+}
+footer {
+    color: white;
+    background-color: black;
+    padding: 1em;
+}
+footer a {
+    color: white;
+    font-weight: bold;
+}
+h4 {
+    font-family: 'Knewave', cursive;
+}
+.columnHeading {
+    font-family: 'Knewave', cursive;
+    font-size: 2em;
 }
 /* -----------------CSS For Uneaten Burgers----------------- */
 .uneaten {
     background-color: lightgreen;
+    margin: 1em;
+    border: 1px solid black;
+}
+.eatBurger {
+    margin: 1em;
 }
 /* -----------------CSS For Devoured Burgers----------------- */
 .devoured {
     color: lightgray;
     background-color: grey;
+    margin: 1em;
+    border: 1px solid black;
 }
 /* -----------------CSS For Add New Burgers----------------- */
 #insertBurger {
+    background-color: lightblue;
     width: 20em;
+    height: 2.5em;
     margin-bottom: 0.5em;
 }
 .insertBurgerBtn {
