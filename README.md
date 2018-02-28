@@ -6,7 +6,7 @@ Eat the Burger is a full stack program that allows users to enter a burger that 
 
 # Technologies
 
-MySQL, Express, Express-Handlebars, NodeJS
+MySQL, Express, Express-Handlebars, NodeJS, jQuery, Twitter Bootstrap
 
 # Deployed on Heroku
 
